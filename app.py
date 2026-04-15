@@ -7,7 +7,6 @@ import streamlit as st
 import numpy as np
 import plotly.graph_objects as go
 from typing import List, Tuple
-import time
 
 # ============================================================================
 # ALGORITHM IMPLEMENTATIONS
@@ -458,22 +457,6 @@ with col1:
             len(st.session_state.frames) - 1,
             st.session_state.current_frame
         )
-        
-        # Play/Pause Animation
-        col_play, col_speed = st.columns([1, 3])
-        with col_play:
-            if st.button("▶️ Play Animation"):
-                for i in range(st.session_state.current_frame, len(st.session_state.frames)):
-                    st.session_state.current_frame = i
-                    # Create a placeholder for dynamic updates
-                    placeholder = st.empty()
-                    fig = create_visualization(
-                        st.session_state.frames,
-                        st.session_state.current_frame,
-                        selected_algo
-                    )
-                    placeholder.plotly_chart(fig, use_container_width=True)
-                    time.sleep(1 / speed)  # Speed control
     else:
         st.info("👈 Select an algorithm and click 'Run Algorithm' to start!")
 
