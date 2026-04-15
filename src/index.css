@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bar-default {
+    @apply fill-indigo-500 transition-all duration-100 ease-out;
+  }
+
+  .bar-comparing {
+    @apply fill-yellow-400 transition-all duration-100 ease-out;
+  }
+
+  .bar-swapping {
+    @apply fill-red-500 transition-all duration-100 ease-out;
+  }
+
+  .bar-sorted {
+    @apply fill-green-500 transition-all duration-100 ease-out;
+  }
+
+  .bar-label {
+    @apply text-xs font-semibold fill-white;
+  }
+
+  .complexity-chip {
+    @apply px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .complexity-fast {
+    @apply bg-green-900 text-green-200;
+  }
+
+  .complexity-medium {
+    @apply bg-yellow-900 text-yellow-200;
+  }
+
+  .complexity-slow {
+    @apply bg-red-900 text-red-200;
+  }
+
+  .algorithm-button {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 cursor-pointer;
+  }
+
+  .algorithm-button.active {
+    @apply bg-indigo-600 text-white;
+  }
+
+  .algorithm-button:not(.active) {
+    @apply bg-gray-800 text-gray-300 hover:bg-gray-700;
+  }
+}
